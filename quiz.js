@@ -38,7 +38,10 @@ const options = [
 		"Rhinovirus"
 	],
 	[
-		"Ikeja","Agege","Ipaja","Ile Iwe"
+		"Ikeja",
+		"Agege",
+		"Ipaja",
+		"Ile Iwe"
 	]
 ];
 
