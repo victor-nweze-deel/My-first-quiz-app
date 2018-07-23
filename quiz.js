@@ -38,7 +38,7 @@ const options = [
 		"Rhinovirus"
 	],
 	[
-		"ikeja","agege","ipaja","Ile Iwe"
+		"Ikeja","Agege","Ipaja","Ile Iwe"
 	]
 ];
 
@@ -46,7 +46,7 @@ const answers = [
 	"Donald Trump",
 	"Alexander Flemming",
 	"School",
-	"Rhinovirus","ile iwe"
+	"Rhinovirus","Ile Iwe"
 ];
 
 const maxCount = questions.length;
