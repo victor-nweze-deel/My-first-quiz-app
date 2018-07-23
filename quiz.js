@@ -9,7 +9,7 @@ const questions = [
 	"Who discovered penicillin?",
 	"What is collective noun for a group of fish?",
 	"Which of these viruses is responsible for common cold?",
-	"where is brother jibola house"
+	"Where is brother jibola's house."
 ];
 
 const options = [
@@ -38,7 +38,7 @@ const options = [
 		"Rhinovirus"
 	],
 	[
-		"ikeja","agege","ipaja","ile iwe"
+		"ikeja","agege","ipaja","Ile Iwe"
 	]
 ];
 
@@ -59,7 +59,7 @@ function startQuiz(){
 
 	if(currentQuestion >= 0){
 		var selVal = form.question.value;
-		if(selVal === "")
+		if(!selVal)
 			return;
 		(selVal === answers[currentQuestion]) ? score++ : score = score;
 	}
@@ -71,7 +71,7 @@ function startQuiz(){
 			questionDisplay.style.display = 'none',
 			optionDisplay.style.display = 'none',
 			resultPanel.style.display = 'block',
-			resultPanel.innerHTML = `${score > 4?'EXCELLENT!':(score==3?'GOOD JOB!':(score==2?'FAIR!':'POOR!'))}
+			resultPanel.innerHTML = `${score > 4?'EXCELLENT!':(score > 3?'GOOD JOB!':(score > 2?'FAIR!':'POOR!'))}
 			You earned ${score} point${score!==1?'s':''} in this session.`,
 			score = 0,
 			nextBtn.innerHTML = 'START NEW SESSION',
