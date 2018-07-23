@@ -8,7 +8,8 @@ const questions = [
 	"Who is the president of America?",
 	"Who discovered penicillin?",
 	"What is collective noun for a group of fish?",
-	"Which of these viruses is responsible for common cold?"
+	"Which of these viruses is responsible for common cold?",
+	"where is brother jibola house"
 ];
 
 const options = [
@@ -35,6 +36,9 @@ const options = [
 		"SARS Virus",
 		"AIDS Virus",
 		"Rhinovirus"
+	],
+	[
+		"ikeja","agege","ipaja","ile iwe"
 	]
 ];
 
@@ -42,7 +46,7 @@ const answers = [
 	"Donald Trump",
 	"Alexander Flemming",
 	"School",
-	"Rhinovirus"
+	"Rhinovirus","ile iwe"
 ];
 
 const maxCount = questions.length;
@@ -55,6 +59,8 @@ function startQuiz(){
 
 	if(currentQuestion >= 0){
 		var selVal = form.question.value;
+		if(selVal === "")
+			return;
 		(selVal === answers[currentQuestion]) ? score++ : score = score;
 	}
 
@@ -65,7 +71,7 @@ function startQuiz(){
 			questionDisplay.style.display = 'none',
 			optionDisplay.style.display = 'none',
 			resultPanel.style.display = 'block',
-			resultPanel.innerHTML = `${score==4?'EXCELLENT!':(score==3?'GOOD JOB!':(score==2?'FAIR!':'POOR!'))}
+			resultPanel.innerHTML = `${score > 4?'EXCELLENT!':(score==3?'GOOD JOB!':(score==2?'FAIR!':'POOR!'))}
 			You earned ${score} point${score!==1?'s':''} in this session.`,
 			score = 0,
 			nextBtn.innerHTML = 'START NEW SESSION',
@@ -91,7 +97,7 @@ function setupQuestions(){
 	optionDisplay.style.display = 'block';
 	resultPanel.style.display = 'none';
 	questionDisplay.innerHTML = questions[currentQuestion];
-	for(let i = 0; i < questions.length; i++){
+	for(let i = 0; i < options[i].length; i++){
 		var radioInput = document.createElement('input');
 		radioInput.setAttribute('type', 'radio');
 		radioInput.setAttribute('value', options[currentQuestion][i]);
